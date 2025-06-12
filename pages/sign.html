@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in | AP | Deepak</title>
+    <link rel="icon" type="image/x-icon" href="../Asse/apasse/asset 3.svg">
+
+    <link rel="stylesheet" href="../css/log.css">
+</head>
+
+<body>
+    <header class="apheader">
+        <nav class="nav">
+            <div class="leftap">
+            </div>
+            <div class="logo">
+                <a href="../index.html" target="blank">
+                    <img src="../Asse/apasse/asset 0.svg" alt="logo" height="100px" width="200px">
+                </a>
+            </div>
+            <div class="rightap">
+            </div>
+    </header>
+    <div class="form">
+
+        <div class="con">CREATE YOUR AP <br> ACCOUNT</div>
+        <div class="content">
+            Sign up to Audemars Piguet to check in your watches and benefit from additional <br> exlusive features.
+        </div>
+        <div class="sign">Already have an account? <a href="log.html">Log in</a></div><br>
+        ENTER YOUR EMAIL ADDRESS<br>
+        <br>
+        <input type="text" id="email" placeholder="Email" class="box"><br> <br>
+        <input type="password" id="password" placeholder="Password" class="box"><br><br>
+        <button onclick="signup()" id="butt">Create Account</button>
+        <div id="error" class="error"></div>
+
+    </div>
+    <script>
+        function signup() {
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const error = document.getElementById("error");
+
+            if (!email || !password) {
+                error.textContent = "Please fill in all fields.";
+                return;
+            }
+
+            const users = JSON.parse(localStorage.getItem("users") || "[]");
+
+            const existingUser = users.find(u => u.email === email);
+            if (existingUser) {
+                error.textContent = "User already exists. Try logging in.";
+                return;
+            }
+
+            users.push({ email, password });
+            localStorage.setItem("users", JSON.stringify(users));
+            alert("Signup successful! Please log in.");
+            window.location.href = "log.html";
+        }
+    </script>
+</body>
+
+</html>

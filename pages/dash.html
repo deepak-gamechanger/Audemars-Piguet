@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="icon" type="image/x-icon" href="../mainfile/AP assets/asset 3.svg">
+<title>Welcome to Dashboard</title>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxury Watch Dashboard</title>
+    <style>
+        :root {
+            --primary: #111;
+            --accent: black;
+            --bg: #f9f9f9;
+            --text: #333;
+            --white: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            background-color: var(--bg);
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 240px;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 30px 20px;
+        }
+
+        .sidebar h2 {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            padding: 12px 10px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #222;
+        }
+
+        .main {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-weight: 400;
+            color: var(--primary);
+            font-size: 26px;
+        }
+
+        .btns {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 14px;
+            border: none;
+            border-radius: 4px;
+            color: var(--white);
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn.logout {
+            background-color: #c62828;
+        }
+
+        .btn.delete {
+            background-color: #b71c1c;
+        }
+
+        .cards {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--white);
+            padding: 20px;
+            border-left: 5px solid var(--accent);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .card p {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+
+            .main {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+        }
+
+        .blackbody {
+            height: 500px;
+            width: 100%;
+
+
+            /* p {
+                color: white;
+                font-size: 20px;
+                text-align: center;
+                padding-top: 200px;
+            } */
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .upcoming {
+                margin-top: 35px;
+                padding-top: 20px;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 30px;
+            }
+
+
+            .blackbody {
+                padding: 20px;
+                background-color: #f7f7f7;
+                text-align: center;
+            }
+
+            .upcoming {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 15px;
+            }
+
+            .pro {
+                flex: 1 1 200px;
+                max-width: 250px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                overflow: hidden;
+                background-color: #fff;
+                transition: transform 0.3s;
+            }
+
+            .pro:hover {
+                transform: scale(1.05);
+            }
+
+            .pro img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .upcoming {
+                    gap: 15px;
+                }
+
+                .pro {
+                    flex: 1 1 45%;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .pro {
+                    flex: 1 1 100%;
+                    max-width: 90%;
+                }
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <a href="../index.html" target="blank">
+            <img src="../Asse/apasse/asset 1.svg" alt="">
+        </a>
+        <br><br>
+        <ul>
+            <li onclick="alert('Dashboard loaded')">Dashboard</li>
+            <li onclick="alert('Orders section coming soon')">My Orders</li>
+            <li onclick="alert('Wishlist section coming soon')">Wishlist</li>
+            <li onclick="alert('Profile settings coming soon')">Account</li>
+            <li onclick="logout()">Logout</li>
+            <li onclick="deleteAccount()">Delete Account</li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <div class="header">
+            <h1>Welcome back, <span id="userEmail">User</span></h1>
+            <div class="btns">
+                <button class="btn logout" onclick="logout()">Logout</button>
+                <button class="btn delete" onclick="deleteAccount()">Delete Account</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Total Orders</h3>
+                <p>6</p>
+            </div>
+            <div class="card">
+                <h3>Premium Watches</h3>
+                <p>12</p>
+            </div>
+            <div class="card">
+                <h3>Wishlist Items</h3>
+                <p>4</p>
+            </div>
+            <div class="card">
+                <h3>Spent This Month</h3>
+                <p>₹1,42,500</p>
+            </div>
+        </div>
+
+        <!-- Featured Watch -->
+        <div style="margin-top: 40px;">
+            <h2 style="font-size: 22px; margin-bottom: 10px; color: #111;">Featured Watch</h2>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <img src="../Asse/dashboardass/feature.png" alt="AP Royal Oak"
+                    style="max-width: 200px; border-radius: 8px;" />
+                <div>
+                    <h3 style="margin-bottom: 8px; margin-top: 15%;">Royal Oak Perpetual Calender "150th Anniversary"
+                    </h3>
+                    <p style="max-width: 500px;">This vintage-inspired timepiece pays a final tribute to Caliber 5135 ,
+                        the historic openworked
+                        perpetual calender movement</p>
+                    <p style="margin-top: 8px; font-weight: bold; color:black;">₹29,80,000</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Orders -->
+        <div style="margin-top: 40px;">
+            <h2 style="font-size: 22px; margin-bottom: 10px; color: #111;">Recent Orders</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background-color: #333; color: #fff;">
+                        <th style="padding: 10px;">Order ID</th>
+                        <th style="padding: 10px;">Model</th>
+                        <th style="padding: 10px;">Date</th>
+                        <th style="padding: 10px;">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #fff;">
+                        <td style="padding: 10px;">#98412</td>
+                        <td style="padding: 10px;">Royal Oak Concept</td>
+                        <td style="padding: 10px;">May 28, 2025</td>
+                        <td style="padding: 10px; color: green;">Delivered</td>
+                    </tr>
+                    <tr style="background-color: #f3f3f3;">
+                        <td style="padding: 10px;">#98476</td>
+                        <td style="padding: 10px;">Code 11.59 Chronograph</td>
+                        <td style="padding: 10px;">May 30, 2025</td>
+                        <td style="padding: 10px; color: orange;">Shipped</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Brand News -->
+        <div style="margin-top: 40px;">
+            <h2 style="font-size: 22px; margin-bottom: 10px; color: #111;">Latest from AUDEMARS PIGUET</h2>
+            <ul style="list-style: square; padding-left: 20px; line-height: 1.8;">
+                <li><strong>June 2025:</strong> New “Royal Oak Frosted Gold” revealed in Geneva</li>
+                <li><strong>May 2025:</strong> AP expands global boutique network in Singapore</li>
+                <li><strong>April 2025:</strong> Collector spotlight: Owning 8 APs worth ₹4.5 Cr</li>
+            </ul>
+        </div>
+        <div class="blackbody">
+            <br>
+            <h2 style="font-size: 22px; margin-bottom: 10px; color: #111;">Upcoming Projects</h2>
+            <div class="upcoming">
+                <div class="pro">
+                    <img src="../Asse/dashboardass/assets6.png" alt="">
+
+                </div>
+                <div class="pro">
+                    <img src="../Asse/dashboardass/assets7.png" alt="">
+                </div>
+                <div class="pro">
+                    <img src="../Asse/dashboardass/watch-1087.avif" alt="">
+                </div>
+                <div class="pro">
+                    <img src="../Asse/dashboardass/watch-772.avif" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const user = JSON.parse(localStorage.getItem("user"));
+        const userList = JSON.parse(localStorage.getItem("users") || "[]");
+
+        if (!user) {
+            window.location.href = "./log.html";
+        } else {
+            document.getElementById("userEmail").textContent = user.email;
+        }
+
+        function logout() {
+            localStorage.removeItem("user");
+            window.location.href = "./log.html";
+        }
+
+        function deleteAccount() {
+            if (!confirm("Are you sure you want to delete your account?")) return;
+
+            const updatedUsers = userList.filter(u => u.email !== user.email);
+            localStorage.setItem("users", JSON.stringify(updatedUsers));
+            localStorage.removeItem("user");
+            alert("Your account has been deleted.");
+            window.location.href = "./sign.html";
+        }
+    </script>
+
+</body>
+
+</html>

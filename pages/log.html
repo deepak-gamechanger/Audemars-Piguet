@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in | AP | Deepak</title>
+    <link rel="icon" type="image/x-icon" href="../Asse/apasse/asset 3.svg">
+
+    <link rel="stylesheet" href="../css/log.css">
+</head>
+
+<body>
+    <header class="apheader">
+        <nav class="nav">
+            <div class="leftap">
+            </div>
+            <div class="logo">
+                <a href="../index.html" target="blank">
+                    <img src="../Asse/apasse/asset 0.svg" alt="logo" height="100px" width="200px">
+                </a>
+            </div>
+            <div class="rightap">
+            </div>
+    </header>
+    <div class="form">
+
+        <div class="con">WELCOME</div>
+        <div class="content">
+            Log in to access your personal AP Account or register using the link below. Your <br>personal account
+            enables you to check in your watches and benefit from <br> additional exclusive features
+        </div>
+        <div class="sign">Don't have an account? <a href="sign.html">Sign Up</a></div><br>
+        ENTER YOUR EMAIL ADDRESS <br> <br>
+        <input type="textbox" id="email" placeholder="Email" class="box"> <br> <br>
+        <input type="password" id="password" placeholder="Password" class="box">
+        <br><br>
+        <button onclick="login()" id="butt">Login</button>
+        <div id="error" class="error"></div>
+
+    </div>
+
+    <script>
+        function login() {
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const error = document.getElementById("error");
+
+            if (!email || !password) {
+                error.textContent = "Please fill in all fields.";
+                return;
+            }
+
+            //  Check all users from signup
+            const users = JSON.parse(localStorage.getItem("users") || "[]");
+            const foundUser = users.find(u => u.email === email && u.password === password);
+
+            if (foundUser) {
+                // Save logged-in user and redirect
+                localStorage.setItem("user", JSON.stringify({ email }));
+                window.location.href = "./dash.html";
+            } else {
+                error.textContent = "Invalid email or password.";
+            }
+
+        }
+    </script>
+</body>
+
+</html>
