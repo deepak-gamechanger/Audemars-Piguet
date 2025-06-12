@@ -1,0 +1,445 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.apheader {
+  height: 22.3vh;
+  background-color: #faf6f6;
+  padding: 10px;
+  text-align: center;
+}
+
+.nav {
+  margin-top: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+  background-color: #faf6f6;
+
+  .leftap {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .logo {
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    color: white;
+    font-weight: 600;
+  }
+
+  .rightap {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+.apheader :hover {
+  color: #333;
+}
+
+.apbody {
+  height: 100vh;
+  background-color: #faf6f6;
+  color: #333;
+  font-size: large;
+}
+
+.vidvid {
+  width: 100%;
+
+}
+
+.apbody1 {
+  position: absolute;
+  top: 100vh;
+  left: 70px;
+  color: #faf6f6;
+  font-size: large;
+}
+
+#b2 {
+  font-size: xx-large;
+}
+
+.blackbody {
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20%;
+  color: white;
+  font-size: large;
+
+  .sec1 {
+    height: 200px;
+    width: 250px;
+  }
+
+  .sec2 {
+    height: 200px;
+    width: 250px;
+  }
+}
+
+.new1black {
+  height: 125vh;
+  background-color: black;
+}
+
+.new1black1 img {
+  height: 100vh;
+  object-fit: contain;
+  float: left;
+  width: 70%;
+  padding-top: 5%;
+}
+
+.new1black2 {
+  padding-top: 15%;
+  color: white;
+}
+
+.utube {
+  background-color: black;
+  display: flex;
+  padding-top: 10%;
+  padding-left: 10%;
+  height: 150vh;
+  width: 100%;
+}
+
+.olive {
+  height: 110vh;
+  background-color: #02291f;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .para {
+    height: 400px;
+    width: 800px;
+    font-size: 3.5rem;
+  }
+
+  .par {
+    font-size: 1.5rem;
+  }
+
+}
+
+.boutiques {
+  height: 125vh;
+  background-color: white;
+  padding-top: 5%;
+
+}
+
+.boutiques1 img {
+  height: 80vh;
+  object-fit: contain;
+  float: left;
+  width: 70%;
+  padding-top: 5%;
+}
+
+.boutiques2 {
+  height: 145px;
+  padding-left: 10%;
+  padding-top: 15%;
+  color: #000000;
+
+}
+
+.hov {
+  transition: ease-in-out 0.5s all;
+}
+
+.hov:hover {
+  transform: scale(1.1);
+  transition: ease-in-out 1s all;
+}
+
+.foot {
+  height: 55vh;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  foot sec1 {
+    height: 100px;
+    width: 100px;
+  }
+
+  foot sec2 {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+#butt {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.footer {
+  height: 25vh;
+  background-color: #02291f;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer img {
+  height: 200px;
+  width: 200px;
+}
+
+.lastfoot {
+  border-top: 1px solid white;
+  height: 70vh;
+  background-color: #02291f;
+  list-style-type: none;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.social {
+  height: 20vh;
+  padding-bottom: 5%;
+  background-color: #02291f;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+.acce img {
+  height: 50px;
+  width: 50px;
+}
+
+
+@media screen and (max-width:800px) {
+  * {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .apheader {
+    height: 9vh;
+    background-color: white;
+    text-align: center;
+  }
+
+  .nav {
+    background-color: white;
+    display: flex;
+
+    .leftap {
+      display: none;
+
+    }
+
+    .rightap {
+      display: none;
+
+    }
+  }
+
+  .apbody {
+    height: 26vh;
+    background-color: white;
+
+  }
+
+  .apbody1 {
+    display: none;
+  }
+
+
+  .blackbody {
+    height: 50vh;
+    width: 100%;
+    background-color: black;
+
+  }
+
+  .blackbody1 {
+    height: 30vh;
+  }
+
+
+  .newblack {
+    background-color: black;
+    height: 100vh;
+  }
+
+  .newblack2 img {
+    float: right;
+    padding-bottom: 70%;
+  }
+
+  .new1black {
+    height: 85vh;
+    padding: 0 6px;
+    background-color: black;
+
+  }
+
+  .utube {
+    background-color: black;
+    display: flex;
+    padding-top: 10%;
+    padding-left: 10%;
+    height: 50vh;
+    width: 100%;
+  }
+
+  .new1black1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .new1black1 img {
+    height: 25vh;
+    object-fit: cover;
+    width: 70%;
+    float: left;
+    padding-top: 8%;
+    padding-left: 5%;
+    display: block;
+  }
+
+  .new1black2 {
+    height: 145px;
+    padding-left: 10%;
+    padding-top: 15%;
+    color: white;
+  }
+
+  .new2black {
+    height: 150vh;
+    background-color: black;
+    display: flex;
+    padding-top: 50vh;
+  }
+
+  .new2black1 {
+    height: 145px;
+    color: white;
+    width: 30%;
+    padding-top: 25%;
+    padding-left: 5%;
+  }
+
+  .new2black2 img {
+    padding-top: 15px;
+    margin-top: 90%;
+    height: 30vh;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .olive {
+    height: 110vh;
+    background-color: #02291f;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .para {
+      height: 400px;
+      width: 800px;
+      font-size: 1.5rem;
+      padding: 5px 5px 5px 5px;
+    }
+
+    .par {
+      font-size: 1.5rem;
+    }
+
+  }
+
+  .boutiques {
+    height: 60vh;
+    background-color: white;
+    padding-top: 5%;
+    display: flex;
+  }
+
+  .boutiques1 img {
+    margin-left: 10%;
+    width: 100%;
+    height: 25vh;
+    object-fit: cover;
+    float: left;
+    padding-top: 8%;
+  }
+
+  .foot {
+    height: 24vh;
+    justify-content: space-evenly;
+  }
+
+  .foot secc1 {
+    display: none;
+  }
+
+
+
+  .lastfoot {
+    width: 100%;
+    background-color: #02291f;
+    height: 45vh;
+    font-size: small;
+    font-weight: 100;
+  }
+
+  .lastfoot .sec1,
+  .sec2,
+  .sec3,
+  .sec4 {
+    width: 100%;
+    display: none;
+
+  }
+
+}
